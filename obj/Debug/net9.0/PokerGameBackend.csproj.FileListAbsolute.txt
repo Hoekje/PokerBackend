@@ -33,3 +33,4 @@ C:\Projects\PokerGameBackend\obj\Debug\net9.0\PokerGameBackend.genruntimeconfig.
 C:\Projects\PokerGameBackend\obj\Debug\net9.0\ref\PokerGameBackend.dll
 C:\Projects\PokerGameBackend\bin\Debug\net9.0\Newtonsoft.Json.dll
 C:\Projects\PokerGameBackend\bin\Debug\net9.0\System.Net.WebSockets.WebSocketProtocol.dll
+C:\Projects\PokerGameBackend\obj\Debug\net9.0\PokerGameBackend.sourcelink.json
