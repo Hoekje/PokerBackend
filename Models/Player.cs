@@ -1,39 +1,32 @@
+using Microsoft.Net.Http.Headers;
+
 namespace PokerGame.Models
 {
     public class Player
     {
-        // Core properties (no logic)
         public string ConnectionId { get; }
         public List<Card> Hand { get; private set; } = new List<Card>();
-        public int Chips { get; private set; }
-        public bool IsActive { get; private set; }
-        public int CurrentBet { get; private set; }
+        public int Chips { get; set; }
+        public bool IsReady { get; private set; }
+        public bool isActive;
+
+        public bool HasActed { get; set; }
+        public bool HasFolded {get; set;}
+        public bool HasRaised { get; set; }
+        public int CurrentBet { get; set; }
+
 
         // Constructor
         public Player(string connectionId, int startingChips)
         {
             ConnectionId = connectionId;
             Chips = startingChips;
-            IsActive = true;
+            isActive = true;
         }
-
-        // Method stubs (implement later)
-        public void Fold()
-        {
-            IsActive = false;
-        }
-        // public void Bet(int amount)
-        // {
-
-            // }
         public void AddToHand(Card card)
         {
             Hand.Add(card);
         }
-        // public void ResetForNewRound()
-        // {
-            
-        // }
 
         public override string ToString() => 
             $"{ConnectionId}: {Hand.Count} cards, {Chips} chips";

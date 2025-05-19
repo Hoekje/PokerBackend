@@ -6,10 +6,10 @@ namespace PokerGame.Models
     {
         private ConcurrentDictionary<string, PokerTable> _game = new();
 
-        public string CreateNewGame()
+        public string CreateNewGame(Player hostPlayer)
         {
             var gameId = Guid.NewGuid().ToString();
-            _game.TryAdd(gameId, new PokerTable());
+            _game.TryAdd(gameId, new PokerTable(gameId, hostPlayer));
             return gameId;
         }
 
@@ -24,7 +24,6 @@ namespace PokerGame.Models
                 return null;
             }
         }
-
         public bool RemoveGame(string gameId)
         {
             return _game.TryRemove(gameId, out _);
